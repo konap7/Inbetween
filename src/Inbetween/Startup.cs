@@ -34,7 +34,7 @@ namespace Inbetween
 
             app.UseStaticFiles();
             app.UseDeveloperExceptionPage();
-            app.UseIdentity();
+            //app.UseIdentity();
             app.UseMvcWithDefaultRoute();
         }
 
