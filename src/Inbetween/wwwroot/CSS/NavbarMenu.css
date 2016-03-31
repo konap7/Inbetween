@@ -1,0 +1,82 @@
+﻿/*---------------------------------------------------------------------------
+                              THE NAV BAR
+---------------------------------------------------------------------------*/
+
+/* Add a PINK background color with a little bit see-through */
+.navbar {
+    margin-bottom: 0;
+    background-color: #bc2954; /*PINK*/
+    z-index: 9999;
+    border: 0;
+    font-size: 18px !important;
+    font-family: Calibri;
+    line-height: 1.42857143 !important;
+    letter-spacing: 0px;
+    border-radius: 0;
+    opacity: 0.9;
+}
+
+    /* Add a WHITE color to all navbar links */
+    .navbar li a, .navbar .navbar-brand {
+        color: #fff !important;
+    }
+
+/* When hoovering over a menu, WHITE box and PINK text */
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #bc2954 /*PINK*/ !important;
+    background-color: #fff !important;
+}
+
+/* Remove border color from the collapsible button */
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+}
+
+/*---------------------------------------------------------------------------
+                              HAMBURGER MENU
+---------------------------------------------------------------------------*/
+
+/*Hamburger-meny before and after click - color on the button*/
+.navbar-toggle {
+    background-color: transparent !important;
+}
+
+    /*Hamburger-meny before and after click - color on the stripes/bars*/
+    .navbar-toggle .icon-bar {
+        background-color: #fff !important;
+    }
+
+    /*Hamburger-meny hoover - color on the button*/
+    .navbar-toggle:hover {
+        background-color: #fff !important;
+    }
+
+        /*Hamburger-meny hoover - color on the stripes/bars*/
+        .navbar-toggle:hover .icon-bar {
+            background-color: #bc2954 !important;
+        }
+
+/*---------------------------------------------------------------------------
+                              DROP DOWN FROM HAMBURGER COLOR 
+---------------------------------------------------------------------------*/
+
+@media (max-width: 767px) {
+    /* Changing the color of the big part */
+    .navbar li {
+        background-color: #49beaa /*#49beaa*/ !important;
+    }
+
+    /* When hoovering over a menu, WHITE box and BLUE text */
+    .navbar-nav li a:hover, .navbar-nav li.active a {
+        color: #49beaa /*#49beaa*/ !important;
+        background-color: #fff !important;
+    }
+
+    /* Changing the color of the lines + the FONT*/
+    #myNavbar {
+        background-color: #49beaa !important;
+        border-color: #49beaa !important;
+        font-weight: bold !important;
+    }
+}
