@@ -13,7 +13,7 @@
     line-height: 1.42857143 !important;
     letter-spacing: 0px;
     border-radius: 0;
-    opacity: 0.9;
+    opacity: 1;
 }
 
     /* Add a WHITE color to all navbar links */
@@ -78,5 +78,9 @@
         background-color: #49beaa !important;
         border-color: #49beaa !important;
         font-weight: bold !important;
+    }
+
+    .navbar {
+        opacity: 1 !important;
     }
 }

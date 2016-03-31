@@ -6,7 +6,9 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link href="~/css/fontsetc.css" rel="stylesheet" />
     <link href="~/css/navbarmenu.css" rel="stylesheet" />
+    <link href="~/css/footer.css" rel="stylesheet" />
     <title>@ViewBag.Title</title>
 </head>
 <body>
@@ -41,6 +43,39 @@
 
     @RenderBody()
 
+    <footer class="text-center">
+        <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </a><br>
+        <p><img style="height: 22px;" src="~/images/logo/inbetween_logo_whit_transparentbg.png" /></p>
+        <br><hr><br>
+        <div class="container">
+            <div id="footerRow" class="row">
+                <div class="col-sm-4">
+                    <p2>Follow Us</p2><br>
+                    <p1>facebook</p1><br>
+                    <p1>Instagram</p1><br>
+                </div>
+                <div class="col-sm-4">
+                    <p2>Contact</p2><br>
+                    <p1>+46 708 460 256</p1><br>
+                    <p1>inbetween@gmail.com</p1><br>
+                </div>
+                <div class="col-sm-4">
+                    <p2>Listen to Us</p2><br>
+                    <p1>Spotify</p1><br>
+                    <p1>iTunes</p1><br>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            // Initialize Tooltip
+            $('[data-toggle="tooltip"]').tooltip();
+        })
+    </script>
 
 </body>
 </html>
