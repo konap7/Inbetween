@@ -13,7 +13,7 @@
     line-height: 1.42857143 !important;
     letter-spacing: 0px;
     border-radius: 0;
-    opacity: 1;
+    opacity: 0.9;
 }
 
     /* Add a WHITE color to all navbar links */
@@ -64,23 +64,33 @@
 @media (max-width: 767px) {
     /* Changing the color of the big part */
     .navbar li {
-        background-color: #49beaa /*#49beaa*/ !important;
+        background-color: black /*#49beaa*/ !important;
     }
 
     /* When hoovering over a menu, WHITE box and BLUE text */
     .navbar-nav li a:hover, .navbar-nav li.active a {
-        color: #49beaa /*#49beaa*/ !important;
+        color: black /*#49beaa*/ !important;
         background-color: #fff !important;
     }
 
     /* Changing the color of the lines + the FONT*/
     #myNavbar {
-        background-color: #49beaa !important;
-        border-color: #49beaa !important;
-        font-weight: bold !important;
+        background-color: black !important;
+        border-color: black !important;
+        font-weight: normal !important;
     }
 
     .navbar {
-        opacity: 1 !important;
+        opacity: 0.9 !important;
     }
+}
+
+/*---------------------------------------------------------------------------
+                              DROP SHADOW UNDER NAVBAR 
+---------------------------------------------------------------------------*/
+
+.navbar-fixed-top {
+    -webkit-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.25);
+    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.25);
 }

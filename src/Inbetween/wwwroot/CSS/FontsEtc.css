@@ -6,18 +6,128 @@
     border-width: 1px;
 }
 
-p1 {
-    font-size: 14px;
-    font-family: Calibri;
-    letter-spacing: 0px;
+/*---------------------------------------------------------------------------
+                              FONTS
+---------------------------------------------------------------------------*/
+
+.date {
+    font-size: 12px;
+    font-family: courier;
+    letter-spacing: 1px;
     font-weight: normal;
-    color: white;
+    color: dimgrey;
 }
 
-p2 {
-    font-size: 22px;
+p {
+    font-size: 16px;
+    font-family: Calibri;
+    letter-spacing: 0px;
+}
+
+h1 {
+    font-size: 32px;
     font-family: Calibri;
     letter-spacing: 0px;
     font-weight: bold;
+}
+
+.pink {
+    color: #bc2954;
+}
+
+.gray {
+    color: dimgrey;
+}
+
+.white {
+    color: #fff;
+}
+
+.center {
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.big {
+    font-size: 20px;
+}
+
+.smal {
+    font-size: 12px;
+}
+
+/*---------------------------------------------------------------------------
+                              IMAGES 
+---------------------------------------------------------------------------*/
+
+img {
+    filter: gray; /* IE6-9 */
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+    /*-webkit-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
+    box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);*/
+    filter: gray;
+    -webkit-transition: all 0.6s ease;
+    margin-bottom: 20px;
+}
+
+    img:hover {
+        filter: grayscale(0%);
+        -webkit-filter: grayscale(0); /* Google Chrome, Safari 6+ & Opera 15+ */
+        filter: none; /* IE6-9 */  
+    }
+
+#change div:hover {
+    opacity: 5;
+    cursor: pointer;
+}
+
+/*---------------------------------------------------------------------------
+                              BUTTONS 
+---------------------------------------------------------------------------*/
+
+
+.button {
+    background-color: #bc2954; /* Pink */
+    border: none;
     color: white;
+    font-family: Calibri;
+    padding: 8px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.6s;
+    text-align: center;
+    /*-webkit-transition: all 0.6s ease;*/
+}
+
+.pinkButton {
+    background-color: transparent;
+    color: #bc2954;
+    border: 2.5px solid #bc2954;
+}
+
+    .pinkButton:hover {
+        background-color: #bc2954;
+        color: white;
+    }
+
+/*---------------------------------------------------------------------------
+                              CENTER THINGS 
+---------------------------------------------------------------------------*/
+
+.centerObjects {
+    text-align: center;
+    align-content: center;
 }
