@@ -11,7 +11,7 @@
     <link href="~/css/footer.css" rel="stylesheet" />
     <title>@ViewBag.Title</title>
 </head>
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="55">
+<body id="Inbetween" data-spy="scroll" data-target=".navbar" data-offset="55">
 
     <script>
         $(document).ready(function () {
@@ -52,10 +52,18 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#myPage">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#albums">Music</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    @if (ViewBag.isHardLinks)
+                    {<li><a onclick="window.location.href='/home/index/#Inbetween'" href="#Inbetween">Home</a></li>}
+                    else {<li><a href="#Inbetween">Home</a></li>}
+                    @if (ViewBag.isHardLinks)
+                    {<li><a onclick="window.location.href='/home/index/#about'" href="#about">About</a></li>}
+                    else {<li><a href="#about">About</a></li> }
+                    @if (ViewBag.isHardLinks)
+                    {<li><a onclick="window.location.href='/home/index/#music'" href="#albums">Music</a></li>}
+                    else {<li><a href="#music">Music</a></li>}
+                    @if (ViewBag.isHardLinks)
+                    { <li><a onclick="window.location.href='/home/index/#contact'" href="#contact">Hard Link Contact</a></li> }
+                    else {<li><a href="#contact">Contact</a></li>}
                 </ul>
             </div>
         </div>
@@ -66,9 +74,15 @@
 
     <!-- #region Footer -->
     <footer class="text-center">
-        <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+        @if (ViewBag.isHardLinks)
+        {<a class="up-arrow" onclick="window.location.href='/home/index/#Inbetween'" href="#Inbetween" data-toggle="tooltip" title="TO TOP">
             <span class="glyphicon glyphicon-chevron-up"></span>
-        </a><br />
+        </a>}
+        else {<a class="up-arrow" href="#Inbetween" data-toggle="tooltip" title="TO TOP">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </a>}
+        
+        <br />
         <p><img style="height: 22px;" src="~/images/logo/inbetween_logo_whit_transparentbg.png" /></p>
         <br><hr><br />
         <div class="container">
