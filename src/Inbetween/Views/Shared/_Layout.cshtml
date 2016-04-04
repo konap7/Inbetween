@@ -13,74 +13,93 @@
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="55">
 
-        <!-- #region Navbar -->
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">
-                        <img style="height: 22px;" src="~/images/logo/inbetween_logo_whit_transparentbg.png" />
-                    </a>
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links in navbar + footer link
+            $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 900, function () {
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            });
+        })
+    </script>
+
+    <!-- #region Navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img style="height: 22px;" src="~/images/logo/inbetween_logo_whit_transparentbg.png" />
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#myPage">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#albums">Music</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- #endregion -->
+
+    @RenderBody()
+
+    <!-- #region Footer -->
+    <footer class="text-center">
+        <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </a><br />
+        <p><img style="height: 22px;" src="~/images/logo/inbetween_logo_whit_transparentbg.png" /></p>
+        <br><hr><br />
+        <div class="container">
+            <div id="footerRow" class="row">
+                <div class="col-sm-4">
+                    <p class="white big bold">Follow Us</p>
+                    <p class="white">facebook</p>
+                    <p1white>Instagram</p1white>
                 </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#myPage">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#news">News</a></li>
-                        <li><a href="#albums">Albums</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
+                <div class="col-sm-4">
+                    <p class="white big bold">Contact</p>
+                    <p class="white">+46 708 460 256</p>
+                    <p class="white">inbetween@gmail.com</p>
+                </div>
+                <div class="col-sm-4">
+                    <p class="white big bold">Listen to Us</p>
+                    <p class="white">Spotify</p>
+                    <p class="white">iTunes</p>
                 </div>
             </div>
-        </nav>
-        <!-- #endregion -->
+        </div>
+    </footer>
 
-        <br />
-        <br />
-        <br />
-
-        @RenderBody()
-
-        <!-- #region Footer -->
-        <footer class="text-center">
-            <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
-                <span class="glyphicon glyphicon-chevron-up"></span>
-            </a><br />
-            <p><img style="height: 22px;" src="~/images/logo/inbetween_logo_whit_transparentbg.png" /></p>
-            <br><hr><br />
-            <div class="container">
-                <div id="footerRow" class="row">
-                    <div class="col-sm-4">
-                        <p class="white big bold">Follow Us</p>
-                        <p class="white">facebook</p>
-                        <p1white>Instagram</p1white>
-                    </div>
-                    <div class="col-sm-4">
-                        <p class="white big bold">Contact</p>
-                        <p class="white">+46 708 460 256</p>
-                        <p class="white">inbetween@gmail.com</p>
-                    </div>
-                    <div class="col-sm-4">
-                        <p class="white big bold">Listen to Us</p>
-                        <p class="white">Spotify</p>
-                        <p class="white">iTunes</p>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-        <script>
+    <script>
         $(document).ready(function () {
             // Initialize Tooltip
             $('[data-toggle="tooltip"]').tooltip();
         })
-        </script>
-        <!-- #endregion -->
+    </script>
+    <!-- #endregion -->
 
 
-    </body>
+</body>
 </html>
