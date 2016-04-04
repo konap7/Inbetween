@@ -16,5 +16,10 @@ namespace Inbetween.Controllers
         {
             return View();
         }
+
+        public IActionResult AllNews()
+        {
+            return View();
+        }
     }
 }

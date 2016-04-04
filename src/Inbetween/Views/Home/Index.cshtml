@@ -1,8 +1,9 @@
 ﻿@*@model CurrentUserVM*@
+
 <link href="~/css/homeindex.css" rel="stylesheet" />
 
 <!-- #region News/home -->
-<div id="home" class="container-fluid white">
+<div id="Inbetween" class="container-fluid white">
     <div class="container">
         <div class="row">
             <br />
@@ -27,7 +28,7 @@
         </div>
         <br />
         <div class="row centerObjects">
-            <button class="button pinkButton">All News</button>
+            <button onclick="window.location.href='/home/allnews'" class="button pinkButton">All News</button>
         </div>
     </div>
     <br />
@@ -53,8 +54,8 @@
 
 <!-- #endregion -->
 
-<!-- #region Albums -->
-<div id="albums" class="container-fluid white">
+<!-- #region Music -->
+<div id="music" class="container-fluid white">
     <div class="container">
         <br />
         <br />
