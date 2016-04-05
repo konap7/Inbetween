@@ -151,6 +151,25 @@ img {
     /*-webkit-transition: all 0.6s ease;*/
 }
 
+submit {
+    background-color: #bc2954; /* Pink */
+    border: none;
+    color: white;
+    font-family: Calibri;
+    /*padding: 8px 32px;*/
+    width: 120px;
+    height: 40px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-align: center;
+    /*-webkit-transition: all 0.6s ease;*/
+}
+
 .pinkButton {
     background-color: transparent;
     color: #bc2954;
