@@ -10,6 +10,7 @@ namespace Inbetween.Models
     {
         ListNewsVM[] GetAll();
         ListNewsVM[] GetTop3();
+        void AddNews(AddNewsVM newNews);
     }
     public class DBNewsRepository : INewsRepository
     {
@@ -46,6 +47,19 @@ namespace Inbetween.Models
                     Date = o.Date
                 })
                 .ToArray();
+        }
+
+        public void AddNews(AddNewsVM newNews)
+        {
+            context.Inbetween_News.Add(new News
+            {
+                Topic = newNews.Topic,
+                Text = newNews.Text,
+                Picture = newNews.Picture,
+                Date = DateTime.Now
+            });
+
+            context.SaveChanges();
         }
     }
 }

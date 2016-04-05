@@ -13,39 +13,43 @@
                 <br />
                 <br />
                 <h1 class="pink center">Add News</h1>
-                <div class="row">
-                    <div class="col-sm-4">
-                        <label class="p bold black left" asp-for="Topic"></label>
-                        <input asp-for="Topic" class="form-control" placeholder="Topic">
-                        <span asp-validation-for="Topic"></span>
+                <form asp-controller="Admin" asp-action="AddNews">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label class="p bold black left" asp-for="Topic"></label>
+                            <input asp-for="Topic" class="form-control" placeholder="Topic">
+                            <span asp-validation-for="Topic"></span>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-8">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <br />
+                            <label class="p bold black left" asp-for="Text"></label>
+                            <textarea asp-for="Text" class="form-control" placeholder="Text"></textarea>
+                            <span asp-validation-for="Text"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <br />
+                            <label class="p bold black left" asp-for="Picture"></label>
+                            <input asp-for="Picture" class="form-control" placeholder="Text">
+                            <span asp-validation-for="Picture"></span>
+                        </div>
+                    </div>
+                    <div class="row">
                         <br />
-                        <label class="p bold black left" asp-for="Text"></label>
-                        <textarea asp-for="Text" class="form-control" placeholder="Text"></textarea>
-                        <span asp-validation-for="Text"></span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-8">
                         <br />
-                        <label class="p bold black left" asp-for="Picture"></label>
-                        <input asp-for="Picture" class="form-control" placeholder="Text">
-                        <span asp-validation-for="Picture"></span>
+                        <input class="button pinkButton" style="margin-left: 10px" type="submit" value="Submit" />
+                        @*<submit class="button pinkButton" style="margin-left: 10px">Submit</submit>*@
+                        <br />
+                        <br />
+                        <br />
+                        <br />
                     </div>
-                </div>
-                <div class="row">
-                    <br />
-                    <br />
-                    <submit class="button pinkButton" style="margin-left: 10px">Submit</submit>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                </div>
+                </form>
             </div>
         </div>
+    </div>
     </div>
 </body>
