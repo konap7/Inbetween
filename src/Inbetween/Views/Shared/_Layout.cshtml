@@ -54,16 +54,26 @@
                 <ul class="nav navbar-nav navbar-right">
                     @if (ViewBag.isNotHomeIndex)
                     {<li><a onclick="window.location.href='/home/index/#Inbetween'" href="#Inbetween">Home</a></li>}
+                    else if (ViewBag.isAdmin)
+                    { <li><a onclick="window.location.href='/admin/index'" href="#AdminIndex">Home</a></li>}
                     else {<li><a href="#Inbetween">Home</a></li>}
                     @if (ViewBag.isNotHomeIndex)
                     {<li><a onclick="window.location.href='/home/index/#about'" href="#about">About</a></li>}
+                    else if (ViewBag.isAdmin)
+                    {<li><a onclick="window.location.href='/admin/addnews'" href="#AddNews">Add News</a></li>}
                     else {<li><a href="#about">About</a></li> }
                     @if (ViewBag.isNotHomeIndex)
                     {<li><a onclick="window.location.href='/home/index/#music'" href="#albums">Music</a></li>}
+                    else if (ViewBag.isAdmin)
+                    {<li><a onclick="window.location.href='/admin/DeleteNews'" href="#DeleteNews">Delete News</a></li>}
                     else {<li><a href="#music">Music</a></li>}
                     @if (ViewBag.isNotHomeIndex)
                     { <li><a onclick="window.location.href='/home/index/#contact'" href="#contact">Contact</a></li> }
+                    else if (ViewBag.isAdmin)
+                    {<li><a onclick="window.location.href='/admin/addalbum'" href="#AddAlbum">Add Album</a></li>}
                     else {<li><a href="#contact">Contact</a></li>}
+                    @if (ViewBag.isAdmin)
+                    {<li><a onclick="window.location.href ='/admin/DeleteAlbum'" href="#DeleteAlbum">Delete Album</a></li>}
                 </ul>
             </div>
         </div>
