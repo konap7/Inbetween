@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Inbetween.ViewModels
 {
-    public class NewsListVM
+    public class ListNewsVM
     {
         public string Topic { get; set; }
         public string Text { get; set; }

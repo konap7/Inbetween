@@ -8,8 +8,8 @@ namespace Inbetween.Models
 {
     public interface INewsRepository
     {
-        NewsListVM[] GetAll();
-        NewsListVM[] GetTop3();
+        ListNewsVM[] GetAll();
+        ListNewsVM[] GetTop3();
     }
     public class DBNewsRepository : INewsRepository
     {
@@ -19,11 +19,11 @@ namespace Inbetween.Models
             this.context = context;
         }
 
-        public NewsListVM[] GetTop3()
+        public ListNewsVM[] GetTop3()
         {
             return context.Inbetween_News
                 .OrderByDescending(o => o.Date)
-                .Select(o => new NewsListVM
+                .Select(o => new ListNewsVM
                 {
                     Topic = o.Topic,
                     Text = o.Text,
@@ -34,11 +34,11 @@ namespace Inbetween.Models
                 .ToArray();
         }
 
-        public NewsListVM[] GetAll()
+        public ListNewsVM[] GetAll()
         {
             return context.Inbetween_News
                 .OrderByDescending(o => o.Date)
-                .Select(o => new NewsListVM
+                .Select(o => new ListNewsVM
                 {
                     Topic = o.Topic,
                     Text = o.Text,

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Inbetween.ViewModels
 {
-    public class NewsVM
+    public class AddNewsVM
     {
         [Display(Name = "Topic")]
         [Required(ErrorMessage = "You must have a topic")]
