@@ -1,5 +1,29 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewBag.isNotHomeIndex = true;
 }
+<!-- #region News/home -->
+<div id="homeAllNews" class="container-fluid white">
+    <div class="container">
+        <div class="row">
+            <br />
+            <br />
+            <h1 class="pink center">All News</h1>
+            @foreach (var news in Model)
+            {
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><button type="button" class="btn btn-danger btn-xs" style="float: left; background-color: #bc2954"><span class="glyphicon glyphicon-trash"></span></button>
+                    <p class="bold big">  @news.Topic</p>
+                    <p class="date">@news.Date.ToString("yyyy-MM-dd")</p>
+                    <p>@news.Text</p>
+                    <img class="img-responsive" src="@news.Picture" />           
+                </div>
+            }
+        </div>
+        <br />
+        <div class="row centerObjects">
+            <button onclick="window.history.back()" class="button pinkButton">Go Back</button>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+</div>

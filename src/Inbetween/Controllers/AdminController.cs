@@ -22,7 +22,8 @@ namespace Inbetween.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return View();
+            var model = repository.GetAll();
+            return View(model);
         }
 
         public IActionResult AddNews()
