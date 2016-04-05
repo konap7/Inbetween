@@ -21,6 +21,7 @@ namespace Inbetween
         public void ConfigureServices(IServiceCollection services)
         {
             var connString = @"Data Source=kickass.database.windows.net;Initial Catalog=KickAssDataBase;Integrated Security=False;User ID=kickass;Password=P@ssword;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            //var connString = @"Data Source=kickass.database.windows.net;Initial Catalog=KickAssDataBase;Persist Security Info=True;User ID=kickass;Password=***********";
             services.AddEntityFramework()
             .AddSqlServer()
             .AddDbContext<KickAssDataBaseContext>(o =>
