@@ -52,17 +52,17 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    @if (ViewBag.isHardLinks)
+                    @if (ViewBag.isNotHomeIndex)
                     {<li><a onclick="window.location.href='/home/index/#Inbetween'" href="#Inbetween">Home</a></li>}
                     else {<li><a href="#Inbetween">Home</a></li>}
-                    @if (ViewBag.isHardLinks)
+                    @if (ViewBag.isNotHomeIndex)
                     {<li><a onclick="window.location.href='/home/index/#about'" href="#about">About</a></li>}
                     else {<li><a href="#about">About</a></li> }
-                    @if (ViewBag.isHardLinks)
+                    @if (ViewBag.isNotHomeIndex)
                     {<li><a onclick="window.location.href='/home/index/#music'" href="#albums">Music</a></li>}
                     else {<li><a href="#music">Music</a></li>}
-                    @if (ViewBag.isHardLinks)
-                    { <li><a onclick="window.location.href='/home/index/#contact'" href="#contact">Hard Link Contact</a></li> }
+                    @if (ViewBag.isNotHomeIndex)
+                    { <li><a onclick="window.location.href='/home/index/#contact'" href="#contact">Contact</a></li> }
                     else {<li><a href="#contact">Contact</a></li>}
                 </ul>
             </div>
@@ -74,7 +74,7 @@
 
     <!-- #region Footer -->
     <footer class="text-center">
-        @if (ViewBag.isHardLinks)
+        @if (ViewBag.isNotHomeIndex)
         {<a class="up-arrow" onclick="window.location.href='/home/index/#Inbetween'" href="#Inbetween" data-toggle="tooltip" title="TO TOP">
             <span class="glyphicon glyphicon-chevron-up"></span>
         </a>}

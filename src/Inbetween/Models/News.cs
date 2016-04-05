@@ -10,7 +10,7 @@ namespace Inbetween.Models
         public int UserId { get; set; }
         public string Topic { get; set; }
         public string Text { get; set; }
-        public image Image { get; set; }
+        //public image Image { get; set; }
         public DateTime Date { get; set; }
     }
 }
