@@ -1,32 +1,5 @@
-﻿@model LoginVM
-
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
 @{
-    ViewBag.isAdmin = true;
-    ViewBag.Title = "Admin Index";
 }
-
-<div id="AdminIndex" class="container-fluid white">
-    <div class="container">
-        <div class="row">
-            <br />
-            <br />
-            <br />
-            <h1 class="pink center">Log in to the Admin Page</h1>
-            <br />
-            <div class="col-sm-6">
-                <label class="p bold black big left" asp-for="UserName"></label>
-                <input asp-for="UserName" class="form-control" placeholder="User name">
-                <span asp-validation-for="UserName"></span>
-            </div>
-            <div class="col-sm-6">
-                <label class="p bold black big left" asp-for="Password"></label>
-                <input asp-for="Password" class="form-control" placeholder="Password">
-                <span asp-validation-for="Password"></span>
-            </div>
-        </div>
-        <br />
-        <submit class="button pinkButton">Sign in</submit>
-        <br />
-        <br />
-    </div>
-</div>
