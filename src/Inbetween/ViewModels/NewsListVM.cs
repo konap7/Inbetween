@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Inbetween.Models
+namespace Inbetween.ViewModels
 {
-    public class News
+    public class NewsListVM
     {
-        public int UserId { get; set; }
         public string Topic { get; set; }
         public string Text { get; set; }
         public string Picture { get; set; }

@@ -28,6 +28,8 @@ namespace Inbetween
             services.AddMvc();
             services.AddCaching();
             services.AddSession();
+
+            services.AddTransient<INewsRepository, DBNewsRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

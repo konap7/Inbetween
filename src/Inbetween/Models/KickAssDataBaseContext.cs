@@ -18,7 +18,8 @@ namespace Inbetween.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<News>().ToTable("Users");
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<News>().ToTable("Inbetween_News");
             //modelBuilder.Entity<Address>().ToTable("Addresses");
             //modelBuilder.Entity<Security>().ToTable("Securitys");
             //modelBuilder.Entity<Order>().ToTable("Orders");
