@@ -12,10 +12,11 @@ namespace Inbetween.ViewModels
     {
         [Display(Name = "User name")]
         [Required(ErrorMessage = "You must enter a user name")]
-        public string UserName { get; set; }
+        public string Username { get; set; }
 
         [Display(Name = "Password")]
-        [Required(ErrorMessage = "You must insert a password")]
+        [Required(ErrorMessage = "You must enter a password")]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
     }
 }

@@ -20,15 +20,24 @@ namespace Inbetween
         // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            var connString = @"Data Source=kickass.database.windows.net;Initial Catalog=KickAssDataBase;Integrated Security=False;User ID=kickass;Password=P@ssword;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-            //var connString = @"Data Source=kickass.database.windows.net;Initial Catalog=KickAssDataBase;Persist Security Info=True;User ID=kickass;Password=***********";
+            //var connString = @"Data Source=kickass.database.windows.net;Initial Catalog=KickAssDataBase;Integrated Security=False;User ID=kickass;Password=P@ssword;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            var connString = @"Server=tcp:kickass.database.windows.net,1433;Database=InbetweenDB;User ID=kickass@kickass;Password=P@ssword;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             services.AddEntityFramework()
             .AddSqlServer()
             .AddDbContext<KickAssDataBaseContext>(o =>
                 o.UseSqlServer(connString));
+
+            services.AddEntityFramework()
+                .AddSqlServer()
+                .AddDbContext<IdentityDbContext>(o => o.UseSqlServer(connString));
+
             services.AddMvc();
             services.AddCaching();
             services.AddSession();
+
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<IdentityDbContext>()
+                .AddDefaultTokenProviders();
 
             services.AddTransient<INewsRepository, DBNewsRepository>();
         }
@@ -44,7 +53,7 @@ namespace Inbetween
 
             app.UseStaticFiles();
             app.UseDeveloperExceptionPage();
-            //app.UseIdentity();
+            app.UseIdentity();
             app.UseMvcWithDefaultRoute();
         }
 

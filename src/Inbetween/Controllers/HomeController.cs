@@ -8,6 +8,7 @@ using Microsoft.AspNet.Mvc.Rendering;
 //using KickAss2.Models;
 using Microsoft.AspNet.Http;
 using Inbetween.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Inbetween.Controllers
 {
@@ -15,8 +16,11 @@ namespace Inbetween.Controllers
     {
         //public IActionResult Index()
         //{
-        //    return View();
+        //    var model = repository.GetTop3();
+        //    return View(model);
         //}
+
+        IdentityDbContext context;
 
         public IActionResult AllNews()
         {
@@ -25,14 +29,16 @@ namespace Inbetween.Controllers
         }
 
         INewsRepository repository;
-        public HomeController(INewsRepository repository)
+        public HomeController(INewsRepository repository, IdentityDbContext context)
         {
+            this.context = context;
             this.repository = repository;
         }
 
-        // GET: /<controller>/
-        public IActionResult Index()
+        //GET: /<controller>/
+        public async Task<IActionResult> Index()
         {
+            await context.Database.EnsureCreatedAsync();
             var model = repository.GetTop3();
             return View(model);
         }
