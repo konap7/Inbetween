@@ -30,7 +30,10 @@ namespace Inbetween.Controllers
         {
             return View();
         }
-
+        public IActionResult SignUp()
+        {
+            return View();
+        }
         public IActionResult AddNews()
         {
             return View();
