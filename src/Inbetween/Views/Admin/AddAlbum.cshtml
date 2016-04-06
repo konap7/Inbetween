@@ -1,13 +1,13 @@
-﻿@model AddNewsVM
+﻿@model AddAlbumVM
 
 @{
     ViewBag.isNotHomeIndex = true;
     ViewBag.isAdmin = true;
-    ViewBag.Title = "Add News";
+    ViewBag.Title = "Add Album";
 }
 
 <body>
-    <div id="AddNews" class="container-fluid">
+    <div id="AddAlbum" class="container-fluid">
         <div class="container">
             <div class="row">
                 <br />
@@ -15,28 +15,30 @@
                 <br />
                 <br />
                 <br />
-                <h1 class="pink center">Add News</h1>
+                <h1 class="pink center">Add Album</h1>
                 <form asp-controller="Admin" asp-action="AddNews">
                     <div class="row">
                         <div class="col-sm-4">
-                            <label class="p bold black left" asp-for="Topic"></label>
-                            <input asp-for="Topic" class="form-control" placeholder="Topic">
-                            <span asp-validation-for="Topic"></span>
+                            <label class="p bold black left" asp-for="AlbumName"></label>
+                            <input asp-for="AlbumName" class="form-control" placeholder="Album name">
+                            <span asp-validation-for="AlbumName"></span>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-8">
-                            <br />
-                            <label class="p bold black left" asp-for="Text"></label>
-                            <textarea asp-for="Text" class="form-control" placeholder="Text" rows="5"></textarea>
-                            <span asp-validation-for="Text"></span>
+                        <div class="col-sm-2">                           
+                            <label class="p bold black left" asp-for="Date"></label>
+                            <input asp-for="Date" class="form-control" placeholder="Date (yyyy-mm-dd)">
+                            <span asp-validation-for="Date"></span>
+                        </div>
+                        <div class="col-sm-2">
+                            <label class="p bold black left" asp-for="Tracks"></label>
+                            <input asp-for="Tracks" class="form-control" placeholder="Number of tracks">
+                            <span asp-validation-for="Tracks"></span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-8">
                             <br />
                             <label class="p bold black left" asp-for="Picture"></label>
-                            <input asp-for="Picture" class="form-control" placeholder="Text">
+                            <input asp-for="Picture" class="form-control" placeholder="Enter the URL of the album cover">
                             <span asp-validation-for="Picture"></span>
                         </div>
                     </div>
@@ -55,3 +57,5 @@
         </div>
     </div>
 </body>
+
+

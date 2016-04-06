@@ -3,12 +3,33 @@
     ViewBag.isAdmin = true;
     ViewBag.isNotHomeIndex = true;
 }
+<link href="~/css/homeindex.css" rel="stylesheet" />
+<!-- #region About/Home -->
+<div id="InbetweenHome" class="container-fluid white">
+    <div class="container">
+        <br />
+        <br /><br />
+        <br /><br />
+        <h1 class="pink center">About Us</h1>
+        <p class="italic center big">"We Love Music!"</p>
+        <p class="center">Bacon ipsum dolor amet turkey irure incididunt pork chop. Ball tip pork chop commodo aute drumstick rump. Ex fugiat ribeye eu tempor enim duis. Lorem biltong eu anim prosciutto deserunt occaecat id. Ullamco short loin ham duis qui capicola adipisicing ipsum tail ea cow. Ad prosciutto venison filet mignon, magna in cow incididunt ea officia.</p>
+        <br />
+        <p class="center">Brisket proident ut capicola cupim tail shoulder ball tip pork loin turducken irure t-bone venison id porchetta. Pig deserunt porchetta bacon pork minim. Nisi cillum short ribs ribeye sed pancetta eiusmod. Ribeye chicken ad bresaola eiusmod shoulder in in elit deserunt. Shoulder shank nulla beef ribs lorem turkey fugiat spare ribs ipsum anim frankfurter pig do. Incididunt veniam jowl dolore, in ground round ball tip pariatur chuck quis pastrami. Andouille flank eiusmod sed, venison nisi swine ball tip filet mignon exercitation cow excepteur frankfurter doner aliquip.</p>
+    </div>
+    <br />
+    <br />
+    <div class="row centerObjects">
+        <button onclick="window.location.href='/admin/ChangeText'" class="button pinkButton">Change</button>
+    </div>
+    <br />
+    <br />
+    <br />
+</div>
+<!-- #endregion -->
 <!-- #region News/home -->
-<div id="AdminIndex" class="container-fluid white">
+<div id="AdminIndex" class="container-fluid bg-grey">
     <div class="container">
         <div class="row">
-            <br />
-            <br />
             <br />
             <br />
             <br />
@@ -32,10 +53,57 @@
         </div>
         <br />
         <div class="row centerObjects">
-            <button onclick="window.history.back()" class="button pinkButton">Add News</button>
+            <button onclick="window.location.href='/admin/addnews'" class="button pinkButton">Add News</button>
         </div>
     </div>
     <br />
     <br />
     <br />
 </div>
+
+<!-- #region Music -->
+<div id="music" class="container-fluid white">
+    <div class="container">
+        <br />
+        <br />
+        <h1 class="pink center">All Albums</h1>
+        <!-- #region ALBUMS -->
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="thumbnail">
+                    <img class="noGray" src="~/images/covers/jpg rgb new spring.jpg" />
+                    <p class="bold big">New Spring</p>
+                    <p class="date">2015-04-15 | Singel</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="thumbnail">
+                    <img class="noGray" src="~/images/covers/jpg rgb the world we know.jpg" />
+                    <p class="bold big">The World We Know</p>
+                    <p class="date">2015-04-15 | Singel</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="thumbnail">
+                    <img class="noGray" src="~/images/covers/jpg rgb i'm searching for you.jpg" />
+                    <p class="bold big">I'm Searching for You</p>
+                    <p class="date">2015-02-13 | Singel</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="thumbnail">
+                    <img class="noGray" src="~/images/covers/jpg rgb mountain.jpg" />
+                    <p class="bold big">Mountain</p>
+                    <p class="date">2015-02-13 | Singel</p>
+                </div>
+            </div>
+        </div>
+        <div class="row centerObjects">
+            <button onclick="window.location.href='/admin/addalbum'" class="button pinkButton">Add Album</button>
+        </div>
+        <br />
+        <br />
+        <br />
+    </div>
+</div>
+<!-- #endregion -->

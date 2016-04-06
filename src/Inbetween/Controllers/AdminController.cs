@@ -26,7 +26,17 @@ namespace Inbetween.Controllers
             return View(model);
         }
 
+        public IActionResult Login()
+        {
+            return View();
+        }
+
         public IActionResult AddNews()
+        {
+            return View();
+        }
+
+        public IActionResult AddAlbum()
         {
             return View();
         }
