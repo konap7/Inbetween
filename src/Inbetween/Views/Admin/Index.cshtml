@@ -1,11 +1,15 @@
 ﻿@model ListNewsVM[]
 @{
+    ViewBag.isAdmin = true;
     ViewBag.isNotHomeIndex = true;
 }
 <!-- #region News/home -->
-<div id="homeAllNews" class="container-fluid white">
+<div id="AdminIndex" class="container-fluid white">
     <div class="container">
         <div class="row">
+            <br />
+            <br />
+            <br />
             <br />
             <br />
             <h1 class="pink center">All News</h1>
@@ -28,7 +32,7 @@
         </div>
         <br />
         <div class="row centerObjects">
-            <button onclick="window.history.back()" class="button pinkButton">Go Back</button>
+            <button onclick="window.history.back()" class="button pinkButton">Add News</button>
         </div>
     </div>
     <br />
