@@ -37,5 +37,12 @@ namespace Inbetween.Controllers
             repository.AddNews(newNews);
             return RedirectToAction(nameof(AdminController.Index));
         }
+
+        [HttpPost]
+        public IActionResult DeleteNewsPost(int id)
+        {
+            repository.DeleteNewsPost(id);
+            return RedirectToAction(nameof(AdminController.Index));
+        }
     }
 }

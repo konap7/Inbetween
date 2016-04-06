@@ -1,4 +1,5 @@
-﻿@{
+﻿@model ListNewsVM[]
+@{
     ViewBag.isNotHomeIndex = true;
 }
 <!-- #region News/home -->
@@ -10,12 +11,19 @@
             <h1 class="pink center">All News</h1>
             @foreach (var news in Model)
             {
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12"><button type="button" class="btn btn-danger btn-xs" style="float: left; background-color: #bc2954"><span class="glyphicon glyphicon-trash"></span></button>
-                    <p class="bold big">  @news.Topic</p>
-                    <p class="date">@news.Date.ToString("yyyy-MM-dd")</p>
-                    <p>@news.Text</p>
-                    <img class="img-responsive" src="@news.Picture" />           
-                </div>
+                <form asp-controller="Admin" asp-action="DeleteNewsPost">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <p class="bold big">@news.Topic</p>
+                        <p style="text-align:left;" class="date">
+                            @news.Date.ToString("yyyy-MM-dd")
+                            <input type="hidden" name="Id" value="@news.Id" />
+                            <input type="submit" value="Delete" class="btn btn-danger btn-xs" style="float: right; background-color: #bc2954">
+                            @*<span style="float:right;" class="glyphicon glyphicon-trash"></span>*@
+                        </p>
+                        <p>@news.Text</p>
+                        <img class="img-responsive" src="@news.Picture" />
+                    </div>
+                </form>
             }
         </div>
         <br />

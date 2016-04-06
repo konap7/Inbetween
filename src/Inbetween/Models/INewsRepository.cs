@@ -11,6 +11,7 @@ namespace Inbetween.Models
         ListNewsVM[] GetAll();
         ListNewsVM[] GetTop3();
         void AddNews(AddNewsVM newNews);
+        void DeleteNewsPost(int id);
     }
     public class DBNewsRepository : INewsRepository
     {
@@ -41,6 +42,7 @@ namespace Inbetween.Models
                 .OrderByDescending(o => o.Date)
                 .Select(o => new ListNewsVM
                 {
+                    Id = o.Id,
                     Topic = o.Topic,
                     Text = o.Text,
                     Picture = o.Picture,
@@ -58,6 +60,14 @@ namespace Inbetween.Models
                 Picture = newNews.Picture,
                 Date = DateTime.Now
             });
+
+            context.SaveChanges();
+        }
+
+        public void DeleteNewsPost(int id)
+        {
+            var newsPost = context.Inbetween_News.Single(n => n.Id == id);
+            context.Inbetween_News.Remove(newsPost);
 
             context.SaveChanges();
         }
