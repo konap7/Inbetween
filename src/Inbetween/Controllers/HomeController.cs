@@ -39,8 +39,15 @@ namespace Inbetween.Controllers
         public async Task<IActionResult> Index()
         {
             await context.Database.EnsureCreatedAsync();
-            var model = repository.GetTop3();
+            var model = repository.GetIndexVM();
             return View(model);
+        }
+        [HttpPost]
+        public IActionResult SendMail() // Lägg in en VM för det!
+        {
+            MailSender mail = new MailSender();
+            mail.SendMail();
+            return RedirectToAction(nameof(HomeController.Index));
         }
     }
 }
