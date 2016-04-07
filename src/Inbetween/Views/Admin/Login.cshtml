@@ -8,27 +8,30 @@
 
 <div id="AdminIndex" class="container-fluid white">
     <div class="container">
-        <div class="row">
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <h1 class="pink center">Log in to the Admin Page</h1>
-            <br />
-            <div class="col-sm-6">
-                <label class="p bold black big left" asp-for="Username"></label>
-                <input asp-for="Username" class="form-control" placeholder="User name">
-                <span asp-validation-for="Username"></span>
+        <form asp-controller="Admin" asp-action="Login">
+            <div class="row">
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <h1 class="pink center">Log in to the Admin Page</h1>
+                <br />
+                <div asp-validation-summary="ValidationSummary.All"></div>
+                <div class="col-sm-6">
+                    <label class="p bold black big left" asp-for="Username"></label>
+                    <input asp-for="Username" class="form-control" placeholder="User name">
+                    <span asp-validation-for="Username"></span>
+                </div>
+                <div class="col-sm-6">
+                    <label class="p bold black big left" asp-for="Password"></label>
+                    <input asp-for="Password" type="password" class="form-control" placeholder="Password">
+                    <span asp-validation-for="Password"></span>
+                </div>
             </div>
-            <div class="col-sm-6">
-                <label class="p bold black big left" asp-for="Password"></label>
-                <input asp-for="Password" type="password" class="form-control" placeholder="Password">
-                <span asp-validation-for="Password"></span>
-            </div>
-        </div>
-        <br />
-        <submit class="button pinkButton">Sign in</submit>
+            <br />
+            <input type="submit" class="button pinkButton" value="Login" />
+        </form>
         <br />
         <br />
     </div>

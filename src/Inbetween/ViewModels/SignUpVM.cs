@@ -10,7 +10,7 @@ namespace Inbetween.ViewModels
     {
         [Required]
         [Display(Name = "User name")]
-        [EmailAddress(ErrorMessage = "Enter a valid user name")]
+        //[EmailAddress(ErrorMessage = "Enter a valid user name")]
         public string Username { get; set; }
 
         [Required]

@@ -8,27 +8,30 @@
 
 <div id="SignUp" class="container-fluid white">
     <div class="container">
-        <div class="row">
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <h1 class="pink center">Sign Up!</h1>
-            <br />
-            <div class="col-sm-6">
-                <label class="p bold black big left" asp-for="Username"></label>
-                <input asp-for="Username" class="form-control" placeholder="User name">
-                <span asp-validation-for="Username"></span>
+        <form asp-controller="Admin" asp-action="SignUp">
+            <div class="row">
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <h1 class="pink center">Sign Up!</h1>
+                <br />
+                <div asp-validation-summary="ValidationSummary.All"></div>
+                <div class="col-sm-6">
+                    <label class="p bold black big left" asp-for="Username"></label>
+                    <input asp-for="Username" class="form-control" placeholder="User name">
+                    <span asp-validation-for="Username"></span>
+                </div>
+                <div class="col-sm-6">
+                    <label class="p bold black big left" asp-for="Password"></label>
+                    <input asp-for="Password" type="password" class="form-control" placeholder="Password">
+                    <span asp-validation-for="Password"></span>
+                </div>
             </div>
-            <div class="col-sm-6">
-                <label class="p bold black big left" asp-for="Password"></label>
-                <input asp-for="Password" type="password" class="form-control" placeholder="Password">
-                <span asp-validation-for="Password"></span>
-            </div>
-        </div>
-        <br />
-        <submit class="button pinkButton">Sign Up</submit>
+            <br />
+            <input type="submit" class="button pinkButton" value="Sign up" />
+        </form>
         <br />
         <br />
     </div>
