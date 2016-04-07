@@ -111,7 +111,7 @@ namespace Inbetween.Controllers
         public async Task<IActionResult> SignOut()
         {
             await signInManager.SignOutAsync();
-            return RedirectToAction(nameof(HomeController.Index));
+            return RedirectToAction(nameof(HomeController.Index), "Home");
         }
     }
 }

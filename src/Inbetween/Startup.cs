@@ -45,16 +45,15 @@ namespace Inbetween
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app)
         {
-            app.UseCookieAuthentication(o =>
-            {
-                o.AutomaticChallenge = true;
-                o.LoginPath = new PathString("/Home/Index");
-                o.LogoutPath = new PathString("/Home/Index");
-            });
 
             app.UseStaticFiles();
             app.UseDeveloperExceptionPage();
-            app.UseIdentity();
+            app.UseIdentity().UseCookieAuthentication(o =>
+            {
+                o.AutomaticChallenge = true;
+                o.LoginPath = new PathString("/Admin/Login");
+                //o.LogoutPath = new PathString("/Home/Index");
+            }); ;
             app.UseMvcWithDefaultRoute();
         }
 
