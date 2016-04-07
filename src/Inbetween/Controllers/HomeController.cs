@@ -9,6 +9,7 @@ using Microsoft.AspNet.Mvc.Rendering;
 using Microsoft.AspNet.Http;
 using Inbetween.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Inbetween.ViewModels;
 
 namespace Inbetween.Controllers
 {
@@ -43,10 +44,10 @@ namespace Inbetween.Controllers
             return View(model);
         }
         [HttpPost]
-        public IActionResult SendMail() // Lägg in en VM för det!
+        public IActionResult SendAnEmail(MailSenderVM mailSenderVMThing) // Lägg in en VM för det!
         {
             MailSender mail = new MailSender();
-            mail.SendMail();
+            mail.SendMail(mailSenderVMThing.Name, mailSenderVMThing.Subject, mailSenderVMThing.Email, mailSenderVMThing.Message); //From, Subject, Email, Text
             return RedirectToAction(nameof(HomeController.Index));
         }
     }

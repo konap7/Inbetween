@@ -21,5 +21,9 @@ namespace Inbetween.ViewModels
         [Display(Name = "Email")]
         [Required(ErrorMessage = "Please enter your Email")]
         public string Email { get; set; }
+
+        [Display(Name = "Message")]
+        [Required(ErrorMessage = "Pleas add some content to your message")]
+        public string Message { get; set; }
     }
 }

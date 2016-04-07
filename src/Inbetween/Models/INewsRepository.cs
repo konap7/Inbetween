@@ -81,7 +81,6 @@ namespace Inbetween.Models
                 ListNews = GetTop3(),
                 MailSenderVMThing = new MailSenderVM()
             };
-
             return model;
         }
     }
