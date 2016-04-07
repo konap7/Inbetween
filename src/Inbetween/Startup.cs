@@ -48,7 +48,8 @@ namespace Inbetween
             app.UseCookieAuthentication(o =>
             {
                 o.AutomaticChallenge = true;
-                //o.LogoutPath = new PathString("/Members/Login");
+                o.LoginPath = new PathString("/Home/Index");
+                o.LogoutPath = new PathString("/Home/Index");
             });
 
             app.UseStaticFiles();
