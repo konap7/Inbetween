@@ -83,73 +83,77 @@
     <!-- #region ADMIN NAVBAR -->
     @if (ViewBag.isAdmin)
     {
-    <nav class="navbar navbar-default navbar-fixed-top" style="background-color: black; margin-top: 50px">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Admin Panel</a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-right">
-                   <li><a onclick="window.location.href='/admin/Index'" href="#AdminIndex">Home</a></li>
-                    <li><a onclick="window.location.href='/admin/addnews'" href="#AddNews">Add News</a></li>
-                    <li><a onclick="window.location.href='/admin/addalbum'" href="#AddAlbum">Add Album</a></li>
-                    <li><a onclick="window.location.href='/admin/changeabout'" href="#ChangeAbout">Change About Text</a></li>
-                    <li><a onclick="window.location.href='#'" href="#LogOut"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    }
-    <!-- #endregion -->
+        <form asp-controller="Admin" asp-action="SignOut">
+            <nav class="navbar navbar-default navbar-fixed-top" style="background-color: black; margin-top: 50px">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Admin Panel</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a onclick="window.location.href='/admin/Index'" href="#AdminIndex">Home</a></li>
+                            <li><a onclick="window.location.href='/admin/addnews'" href="#AddNews">Add News</a></li>
+                            <li><a onclick="window.location.href='/admin/addalbum'" href="#AddAlbum">Add Album</a></li>
+                            <li><a onclick="window.location.href='/admin/changeabout'" href="#ChangeAbout">Change About Text</a></li>
+                            <li><input type="submit" value="Logout" class="btn btn-danger" background-color: #bc2954"><span class="glyphicon glyphicon-log-out"></span></li>
+                            @*<li><a asp-controller="Admin" asp-action="SignOut"><span class="glyphicon glyphicon-log-out"></span><input type="button" value="Logout" background-color #bc2954" /></a></li>*@
+                            @*<li><a onclick="window.location.href='#'" href="#LogOut"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>*@
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            </form>
+            }
+            <!-- #endregion -->
 
-    @RenderBody()
+            @RenderBody()
 
-    <!-- #region Footer -->
-    <footer class="text-center">
-        @if (ViewBag.isNotHomeIndex)
-        {<a class="up-arrow" onclick="window.location.href='/home/index/#Inbetween'" href="#Inbetween" data-toggle="tooltip" title="TO TOP">
+            <!-- #region Footer -->
+            <footer class="text-center">
+                @if (ViewBag.isNotHomeIndex)
+                {<a class="up-arrow" onclick="window.location.href='/home/index/#Inbetween'" href="#Inbetween" data-toggle="tooltip" title="TO TOP">
             <span class="glyphicon glyphicon-chevron-up"></span>
         </a>}
-        else {<a class="up-arrow" href="#Inbetween" data-toggle="tooltip" title="TO TOP">
+                else {<a class="up-arrow" href="#Inbetween" data-toggle="tooltip" title="TO TOP">
             <span class="glyphicon glyphicon-chevron-up"></span>
         </a>}
-        
-        <br />
-        <p><img style="height: 22px;" src="~/images/logo/inbetween_logo_whit_transparentbg.png" /></p>
-        <br><hr><br />
-        <div class="container">
-            <div id="footerRow" class="row">
-                <div class="col-sm-4">
-                    <p class="white big bold">Follow Us</p>
-                    <p class="white">facebook</p>
-                    <p1white>Instagram</p1white>
-                </div>
-                <div class="col-sm-4">
-                    <p class="white big bold">Contact</p>
-                    <p class="white">+46 708 460 256</p>
-                    <p class="white">inbetween@gmail.com</p>
-                </div>
-                <div class="col-sm-4">
-                    <p class="white big bold">Listen to Us</p>
-                    <p class="white">Spotify</p>
-                    <p class="white">iTunes</p>
-                </div>
-            </div>
-        </div>
-    </footer>
 
-    <script>
-        $(document).ready(function () {
-            // Initialize Tooltip
-            $('[data-toggle="tooltip"]').tooltip();
-        })
-    </script>
-    <!-- #endregion -->
+                <br />
+                <p><img style="height: 22px;" src="~/images/logo/inbetween_logo_whit_transparentbg.png" /></p>
+                <br><hr><br />
+                <div class="container">
+                    <div id="footerRow" class="row">
+                        <div class="col-sm-4">
+                            <p class="white big bold">Follow Us</p>
+                            <p class="white">facebook</p>
+                            <p1white>Instagram</p1white>
+                        </div>
+                        <div class="col-sm-4">
+                            <p class="white big bold">Contact</p>
+                            <p class="white">+46 708 460 256</p>
+                            <p class="white">inbetween@gmail.com</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <p class="white big bold">Listen to Us</p>
+                            <p class="white">Spotify</p>
+                            <p class="white">iTunes</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+            <script>
+                $(document).ready(function () {
+                    // Initialize Tooltip
+                    $('[data-toggle="tooltip"]').tooltip();
+                })
+            </script>
+            <!-- #endregion -->
 
 
 </body>

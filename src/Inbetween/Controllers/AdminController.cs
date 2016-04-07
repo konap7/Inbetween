@@ -13,6 +13,7 @@ using Microsoft.AspNet.Authorization;
 
 namespace Inbetween.Controllers
 {
+    [Authorize]
     public class AdminController : Controller
     {
         INewsRepository repository;
@@ -29,21 +30,23 @@ namespace Inbetween.Controllers
         }
 
         // GET: /<controller>/
-        [Authorize]
         public IActionResult Index()
         {
             var model = repository.GetAll();
             return View(model);
         }
 
+        [AllowAnonymous]
         public IActionResult Login()
         {
             return View();
         }
+
         public IActionResult SignUp()
         {
             return View();
         }
+
         public IActionResult AddNews()
         {
             return View();
@@ -91,6 +94,7 @@ namespace Inbetween.Controllers
             return RedirectToAction(nameof(AccountController.Login));
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> Login(LoginVM viewModel)
         {
@@ -107,7 +111,7 @@ namespace Inbetween.Controllers
         public async Task<IActionResult> SignOut()
         {
             await signInManager.SignOutAsync();
-            return RedirectToAction("index", "home");
+            return RedirectToAction(nameof(HomeController.Index));
         }
     }
 }
