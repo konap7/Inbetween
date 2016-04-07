@@ -15,7 +15,7 @@ namespace Inbetween.Models
 
             mail.Subject = theSubject;
 
-            mail.Body = textMessage + "\n" + "From: " + fromName + "\n" + "Email: " + fromEmail;
+            mail.Body = textMessage + "\n" + "\n" + "From: " + fromName + "\n" + "Email: " + fromEmail + "\n\n" + "(This is a message to you from the Inbetween website.)";
 
             SmtpClient smtp = new SmtpClient();
             smtp.Host = "smtp.gmail.com";
