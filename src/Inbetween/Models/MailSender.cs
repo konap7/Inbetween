@@ -9,13 +9,13 @@ namespace Inbetween.Models
 {
     public class MailSender
     {
-        public void SendMail()
+        public void SendMail(string fromName, string theSubject, string fromEmail, string textMessage)
         {
             MailMessage mail = new MailMessage("inbetween.musicgroup@gmail.com", "inbetween.musicgroup@gmail.com");
 
-            mail.Subject = "TEST";
+            mail.Subject = theSubject;
 
-            mail.Body = "HÄR ÄR MEDDELANDET\n" + "From: " + " Viktor";
+            mail.Body = textMessage + "\n" + "From: " + fromName + "\n" + "Email: " + fromEmail;
 
             SmtpClient smtp = new SmtpClient();
             smtp.Host = "smtp.gmail.com";
