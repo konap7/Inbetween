@@ -48,6 +48,7 @@ namespace Inbetween.Controllers
         {
             MailSender mail = new MailSender();
             mail.SendMail(mailSenderVMThing.Name, mailSenderVMThing.Subject, mailSenderVMThing.Email, mailSenderVMThing.Message); //From, Subject, Email, Text
+            ViewData["mail_succes"] = "The email was succefully sent!";
             return RedirectToAction(nameof(HomeController.Index));
         }
     }

@@ -5,6 +5,9 @@
   },
 
   "dependencies": {
+    "jQuery": "2.2.1",
+    "jQuery.Validation": "1.14.0",
+    "jQuery.Validation.Unobtrusive": "2.0.20710",
     "Microsoft.AspNet.IISPlatformHandler": "1.0.0-rc1-final",
     "Microsoft.AspNet.Server.Kestrel": "1.0.0-rc1-final",
     "Microsoft.AspNet.Diagnostics": "1.0.0-rc1-final",

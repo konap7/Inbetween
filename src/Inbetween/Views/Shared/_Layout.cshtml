@@ -1,11 +1,17 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <script src="~/scripts/jquery.js"></script>
+    <script src="~/scripts/jquery.validate.js"></script>
+    <script src="~/scripts/jquery.validate.unobtrusive.js"></script>
     <meta name="viewport" content="width=device-width" />
     <meta charset="utf-8">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link href="~/css/bootstrap.css" rel="stylesheet" />    
+    <link href="~/css/bootstrap-social.css" rel="stylesheet" />
+    <link href="~/css/font-awesome.css" rel="stylesheet" />    
     <link href="~/css/fontsetc.css" rel="stylesheet" />
     <link href="~/css/navbarmenu.css" rel="stylesheet" />
     <link href="~/css/footer.css" rel="stylesheet" />
@@ -100,7 +106,7 @@
                             <li><a onclick="window.location.href='/admin/addnews'" href="#AddNews">Add News</a></li>
                             <li><a onclick="window.location.href='/admin/addalbum'" href="#AddAlbum">Add Album</a></li>
                             <li><a onclick="window.location.href='/admin/changeabout'" href="#ChangeAbout">Change About Text</a></li>
-                            <li><input type="submit" value="Logout" class="button logoutButton"></li>
+                            <li><input type="submit" value="Log Out" class="button logoutButton"></li>
                             @*<li><a asp-controller="Admin" asp-action="SignOut"><span class="glyphicon glyphicon-log-out"></span><input type="button" value="Logout" background-color #bc2954" /></a></li>*@
                             @*<li><a onclick="window.location.href='#'" href="#LogOut"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>*@
                         </ul>
@@ -130,18 +136,16 @@
                     <div id="footerRow" class="row">
                         <div class="col-sm-4">
                             <p class="white big bold">Follow Us</p>
-                            <p class="white">facebook</p>
-                            <p1white>Instagram</p1white>
+                            <button onclick="window.location.href = 'https://www.facebook.com/inbetween.inbetween.946?pnref=eh'" class="inbetweenSocialMediaFilter"><i class="fa fa-facebook"></i> </button>
                         </div>
                         <div class="col-sm-4">
                             <p class="white big bold">Contact</p>
-                            <p class="white">+46 708 460 256</p>
-                            <p class="white">inbetween@gmail.com</p>
+                            <p class="white">+46 704 731 868 | +46 704 134 768</p>
+                            <p class="white">inbetween.musicgroup@gmail.com</p>
                         </div>
                         <div class="col-sm-4">
                             <p class="white big bold">Listen to Us</p>
-                            <p class="white">Spotify</p>
-                            <p class="white">iTunes</p>
+                            <button onclick="window.location.href = 'spotify:artist:5oVlMmgeGNbGgPuSa7HVzG'" class="inbetweenSocialMediaFilter"><i class="fa fa-spotify"></i> </button>
                         </div>
                     </div>
                 </div>
@@ -154,7 +158,5 @@
                 })
             </script>
             <!-- #endregion -->
-
-
 </body>
 </html>
