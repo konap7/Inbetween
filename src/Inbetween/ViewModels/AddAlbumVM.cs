@@ -16,7 +16,8 @@ namespace Inbetween.ViewModels
 
         [Display(Name = "Date")]
         [Required(ErrorMessage = "Enter the release date of the album in the following format: yyyy-mm-dd")]
-        public string Date { get; set; }
+        [DataType(DataType.DateTime)]
+        public DateTime Date { get; set; }
 
         [Display(Name = "Tracks")]
         [Required(ErrorMessage = "Enter the number of tracks for the album")]

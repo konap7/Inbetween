@@ -42,7 +42,7 @@ namespace Inbetween.Models
             context.Inbetween_Albums.Add(new Albums
             {
                 Albumname = newAlbum.Albumname,
-                Date = DateTime.Now,
+                Date = newAlbum.Date,
                 Tracks = newAlbum.Tracks,
                 Picture = newAlbum.Picture
             });
