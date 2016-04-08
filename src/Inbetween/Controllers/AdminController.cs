@@ -68,6 +68,12 @@ namespace Inbetween.Controllers
             return RedirectToAction(nameof(AdminController.Index));
         }
 
+        public IActionResult DeleteAlbum(int id)
+        {
+            albumsRepository.DeleteAlbum(id);
+            return RedirectToAction(nameof(AdminController.Index));
+        }
+
         [HttpPost]
         public IActionResult AddNews(AddNewsVM newNews)
         {
