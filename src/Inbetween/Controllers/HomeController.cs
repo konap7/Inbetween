@@ -51,5 +51,10 @@ namespace Inbetween.Controllers
             ViewData["mail_succes"] = "The email was succefully sent!";
             return RedirectToAction(nameof(HomeController.Index));
         }
+
+        public IActionResult Album()
+        {
+            return View();
+        }
     }
 }
