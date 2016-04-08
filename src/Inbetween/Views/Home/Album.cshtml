@@ -1,4 +1,86 @@
 ﻿<link href="~/css/reviews.css" rel="stylesheet" />
+@model AddReviewVM
+@{
+    ViewBag.isNotHomeIndex = true;
+}
+
+<script>
+    (function ($) {
+
+        $.fn.rating = function (method, options) {
+            method = method || 'create';
+            // This is the easiest way to have default options.
+            var settings = $.extend({
+                // These are the defaults.
+                limit: 5,
+                value: 0,
+                glyph: "glyphicon-star",
+                coloroff: "lightgrey",
+                coloron: "gold",
+                size: "2.0em",
+                cursor: "default",
+                onClick: function () { },
+                endofarray: "idontmatter"
+            }, options);
+            var style = "";
+            style = style + "font-size:" + settings.size + "; ";
+            style = style + "color:" + settings.coloroff + "; ";
+            style = style + "cursor:" + settings.cursor + "; ";
+
+
+
+            if (method == 'create') {
+                //this.html('');	//junk whatever was there
+
+                //initialize the data-rating property
+                this.each(function () {
+                    attr = $(this).attr('data-rating');
+                    if (attr === undefined || attr === false) { $(this).attr('data-rating', settings.value); }
+                })
+
+                //bolt in the glyphs
+                for (var i = 0; i < settings.limit; i++) {
+                    this.append('<span data-value="' + (i + 1) + '" class="ratingicon glyphicon ' + settings.glyph + '" style="' + style + '" aria-hidden="true"></span>');
+                }
+
+                //paint
+                this.each(function () { paint($(this)); });
+
+            }
+            if (method == 'set') {
+                this.attr('data-rating', options);
+                this.each(function () { paint($(this)); });
+            }
+            if (method == 'get') {
+                return this.attr('data-rating');
+            }
+            //register the click events
+            this.find("span.ratingicon").click(function () {
+                rating = $(this).attr('data-value')
+                $(this).parent().attr('data-rating', rating);
+                paint($(this).parent());
+                settings.onClick.call($(this).parent());
+            })
+            function paint(div) {
+                rating = parseInt(div.attr('data-rating'));
+                div.find("input").val(rating);	//if there is an input in the div lets set it's value
+                div.find("span.ratingicon").each(function () {	//now paint the stars
+
+                    var rating = parseInt($(this).parent().attr('data-rating'));
+                    var value = parseInt($(this).attr('data-value'));
+                    if (value > rating) { $(this).css('color', settings.coloroff); }
+                    else { $(this).css('color', settings.coloron); }
+                })
+            }
+
+        };
+
+    }(jQuery));
+
+    $(document).ready(function () {
+        $("#stars-herats").rating('create', { coloron: '#bc2954', limit: 5, glyph: 'glyphicon-heart' });
+    });
+</script>
 <body>
     <div id="Album" class="container-fluid">
         <div class="container">
@@ -7,14 +89,14 @@
             <br />
             <br />
             <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="thumbnail">
                         <img class="noGray" src="~/images/covers/jpg rgb mountain.jpg" />
                         <p class="bold big">Mountain</p>
                         <p class="date">2015-02-13 | Singel</p>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-6 col-sm-6 col-xs-12">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <ul class="nav nav-tabs">
                         <li class="active"><a data-toggle="tab" href="#home">Reviews</a></li>
                         <li><a data-toggle="tab" href="#menu1">Leave Review</a></li>
@@ -22,7 +104,7 @@
 
                     <div class="tab-content">
                         <div id="home" class="tab-pane fade in active">
-                            <h1 class="pink">Reviews</h1>
+                            <h1 class="pink">What Others Think of Our Music!</h1>
                             <br />
                             <p class="big italic">"Åh vad fint det låter!"</p>
                             <p class="">Eva Westerberg</p>
@@ -37,12 +119,35 @@
                             <p class="date">2015-02-13</p>
                         </div>
                         <div id="menu1" class="tab-pane fade">
-                            <h1 class="pink">Leave a Review</h1>
+                            <h1 class="pink">Tell Us What You Think!</h1>
                             <br />
+                            <table>
+                                <tr>
+                                    <td><div id="stars-herats" data-rating="6"></div></td>
+                                </tr>
+                            </table>
+                            <br />
+                            <br />
+                            <label class="p bold black left" asp-for="Name"></label>
+                            <input asp-for="Name" class="form-control" placeholder="First name & last name">
+                            <span asp-validation-for="Name"></span>
+                            <br />
+                            <label class="p bold black left" asp-for="Email"></label>
+                            <input asp-for="Email" class="form-control" placeholder="Ex: example@gmail.com">
+                            <span asp-validation-for="Email"></span>
+                            <br />
+                            <label class="p bold black left" asp-for="Review"></label>
+                            <textarea asp-for="Review" class="form-control" rows="5" placeholder="Your comments about the song"></textarea>
+                            <span asp-validation-for="Review"></span>
+                            <br />
+                            <input class="button pinkButton" type="submit" value="Submit" />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <br />
+    <br />
+    <br />
 </body>
