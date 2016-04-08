@@ -51,11 +51,11 @@ h1 {
     color: #fff;
 }
 
-.black{
+.black {
     color: black !important;
 }
 
-.left{
+.left {
     text-align: left;
 }
 
@@ -131,7 +131,6 @@ img {
                               BUTTONS 
 ---------------------------------------------------------------------------*/
 
-
 .button {
     background-color: #bc2954; /* Pink */
     border: none;
@@ -181,6 +180,28 @@ submit {
         color: white;
     }
 
+.logoutButton {
+    height: 50px !important;
+    width: 80px !important;
+    font-size: 18px;
+    margin-top: -0px;
+    font-weight: normal !important;
+    background-color: transparent;
+    color: white !important;
+    border: transparent !important;
+}
+
+    .logoutButton:hover {
+        height: 50px !important;
+        width: 80px !important;
+        font-size: 18px;
+        margin-top: -0px;
+        font-weight: normal !important;
+        background-color: white;
+        color: #bc2954 !important;
+        border: transparent !important;
+    }
+
 /*---------------------------------------------------------------------------
                               CENTER THINGS 
 ---------------------------------------------------------------------------*/
@@ -196,46 +217,46 @@ submit {
 ---------------------------------------------------------------------------*/
 
 input[type=text], textarea {
-  -moz-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  /*outline: none;*/
-  padding: 3px 0px 3px 3px;
-  margin: 5px 1px 3px 0px;
-  border: 1px solid #DDDDDD;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    /*outline: none;*/
+    padding: 3px 0px 3px 3px;
+    margin: 5px 1px 3px 0px;
+    border: 1px solid #DDDDDD;
 }
 
-input[type=text]:focus, textarea:focus {
-  -moz-box-shadow: 0 0 5px #bc2954 !important;
-  -webkit-box-shadow: 0 0 5px #bc2954 !important;
-  box-shadow: 0 0 5px #bc2954 !important;
-  padding: 3px 0px 3px 3px;
-  margin: 5px 1px 3px 0px;
-  border: 1px solid #bc2954 !important;
-}
+    input[type=text]:focus, textarea:focus {
+        -moz-box-shadow: 0 0 5px #bc2954 !important;
+        -webkit-box-shadow: 0 0 5px #bc2954 !important;
+        box-shadow: 0 0 5px #bc2954 !important;
+        padding: 3px 0px 3px 3px;
+        margin: 5px 1px 3px 0px;
+        border: 1px solid #bc2954 !important;
+    }
 
 label {
-  width: 150px;
-  float: left;
+    width: 150px;
+    float: left;
 }
 
 input[type=password], textarea {
-  -moz-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  /*outline: none;*/
-  padding: 3px 0px 3px 3px;
-  margin: 5px 1px 3px 0px;
-  border: 1px solid #DDDDDD;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    /*outline: none;*/
+    padding: 3px 0px 3px 3px;
+    margin: 5px 1px 3px 0px;
+    border: 1px solid #DDDDDD;
 }
 
-input[type=password]:focus, textarea:focus {
-  -moz-box-shadow: 0 0 5px #bc2954 !important;
-  -webkit-box-shadow: 0 0 5px #bc2954 !important;
-  box-shadow: 0 0 5px #bc2954 !important;
-  padding: 3px 0px 3px 3px;
-  margin: 5px 1px 3px 0px;
-  border: 1px solid #bc2954 !important;
-}
+    input[type=password]:focus, textarea:focus {
+        -moz-box-shadow: 0 0 5px #bc2954 !important;
+        -webkit-box-shadow: 0 0 5px #bc2954 !important;
+        box-shadow: 0 0 5px #bc2954 !important;
+        padding: 3px 0px 3px 3px;
+        margin: 5px 1px 3px 0px;
+        border: 1px solid #bc2954 !important;
+    }
