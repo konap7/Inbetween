@@ -56,48 +56,16 @@
         <h1 class="pink center">Our Music</h1>
         <!-- #region ALBUMS -->
         <div class="row">
-            <!---->
-
             @foreach (var album in Model.ListAlbums)
             {
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                     <div class="thumbnail">
-                        <img class="noGray" src="@album.Picture" />
+                        <a onclick="window.location.href='/home/album'"><img class="noGray" src="@album.Picture" /></a>
                         <p class="bold big">@album.Albumname</p>
                         <p class="date">@album.Date.ToString("yyyy-MM-dd") | Tracks: @album.Tracks</p>
                     </div>
                 </div>
             }
-
-            <!---->
-            @*<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="thumbnail">
-                    <img class="noGray" src="~/images/covers/jpg rgb new spring.jpg" />
-                    <p class="bold big">New Spring</p>
-                    <p class="date">2015-04-15 | Singel</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="thumbnail">
-                    <img class="noGray" src="~/images/covers/jpg rgb the world we know.jpg" />
-                    <p class="bold big">The World We Know</p>
-                    <p class="date">2015-04-15 | Singel</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="thumbnail">
-                    <img class="noGray" src="~/images/covers/jpg rgb i'm searching for you.jpg" />
-                    <p class="bold big">I'm Searching for You</p>
-                    <p class="date">2015-02-13 | Singel</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="thumbnail">
-                    <img class="noGray" src="~/images/covers/jpg rgb mountain.jpg" />
-                    <p class="bold big">Mountain</p>
-                    <p class="date">2015-02-13 | Singel</p>
-                </div>
-            </div>*@
         </div>
         <!-- #endregion -->
         <br />
