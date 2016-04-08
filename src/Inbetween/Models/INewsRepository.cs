@@ -13,7 +13,7 @@ namespace Inbetween.Models
         void AddNews(AddNewsVM newNews);
         void DeleteNewsPost(int id);
 
-        IndexVM GetIndexVM();
+        //IndexVM GetIndexVM();
     }
     public class DBNewsRepository : INewsRepository
     {
@@ -74,14 +74,15 @@ namespace Inbetween.Models
             context.SaveChanges();
         }
 
-        public IndexVM GetIndexVM() // DENNA ÄR AWESOME TILL INDEX!
-        {
-            var model = new IndexVM
-            {
-                ListNews = GetTop3(),
-                MailSenderVMThing = new MailSenderVM()
-            };
-            return model;
-        }
+        //public IndexVM GetIndexVM() // DENNA ÄR AWESOME TILL INDEX!
+        //{
+        //    var model = new IndexVM
+        //    {
+        //        ListNews = GetTop3(),
+        //        ListAlbums = IAlbumsRepository.
+        //        MailSenderVMThing = new MailSenderVM()
+        //    };
+        //    return model;
+        //}
     }
 }

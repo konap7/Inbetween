@@ -22,25 +22,49 @@ namespace Inbetween.Controllers
         //}
 
         IdentityDbContext context;
+        IIndexRepository indexRepository;
+        INewsRepository newsRepository;
+        IAlbumsRepository albumsRepository;
+
+        public HomeController(IIndexRepository indexRepository, INewsRepository newsRepository, IAlbumsRepository albumsRepository, IdentityDbContext context)
+        {
+            this.indexRepository = indexRepository;
+            this.newsRepository = newsRepository;
+            this.albumsRepository = albumsRepository;
+            this.context = context;
+        }
 
         public IActionResult AllNews()
         {
-            var model = repository.GetAll();
+            var model = newsRepository.GetAll();
             return View(model);
         }
 
-        INewsRepository repository;
-        public HomeController(INewsRepository repository, IdentityDbContext context)
+        public IActionResult AllAlbums()
         {
-            this.context = context;
-            this.repository = repository;
+            var model = albumsRepository.GetAllAlbums();
+            return View(model);
         }
+
+        //IAlbumsRepository albumsRepository;
+        //public HomeController(IAlbumsRepository repository, IdentityDbContext context)
+        //{
+        //    this.context = context;
+        //    albumsRepository = repository;
+        //}
+
+        //INewsRepository repository;
+        //public HomeController(INewsRepository repository, IdentityDbContext context)
+        //{
+        //    this.context = context;
+        //    this.repository = repository;
+        //}
 
         //GET: /<controller>/
         public async Task<IActionResult> Index()
         {
             await context.Database.EnsureCreatedAsync();
-            var model = repository.GetIndexVM();
+            var model = indexRepository.GetIndexVM();
             return View(model);
         }
         [HttpPost]

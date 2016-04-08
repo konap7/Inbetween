@@ -40,6 +40,8 @@ namespace Inbetween
                 .AddDefaultTokenProviders();
 
             services.AddTransient<INewsRepository, DBNewsRepository>();
+            services.AddTransient<IAlbumsRepository, DBAlbumsRepository>();
+            services.AddTransient<IIndexRepository, IndexRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

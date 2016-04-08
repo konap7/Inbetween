@@ -16,14 +16,18 @@ namespace Inbetween.Controllers
     [Authorize]
     public class AdminController : Controller
     {
-        INewsRepository repository;
+        IIndexRepository indexRepository;
+        INewsRepository newsRepository;
+        IAlbumsRepository albumsRepository;
         UserManager<IdentityUser> userManager;
         SignInManager<IdentityUser> signInManager;
         IdentityDbContext context;
 
-        public AdminController(INewsRepository repository, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IdentityDbContext context)
+        public AdminController(IIndexRepository indexRepository, INewsRepository newsRepository, IAlbumsRepository albumsRepository, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IdentityDbContext context)
         {
-            this.repository = repository;
+            this.indexRepository = indexRepository;
+            this.newsRepository = newsRepository;
+            this.albumsRepository = albumsRepository;
             this.userManager = userManager;
             this.signInManager = signInManager;
             this.context = context;
@@ -32,7 +36,7 @@ namespace Inbetween.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            var model = repository.GetAll();
+            var model = indexRepository.GetIndexVMAdmin();
             return View(model);
         }
 
@@ -58,16 +62,23 @@ namespace Inbetween.Controllers
         }
 
         [HttpPost]
+        public IActionResult AddAlbum(AddAlbumVM newAlbum)
+        {
+            albumsRepository.AddAlbum(newAlbum);
+            return RedirectToAction(nameof(AdminController.Index));
+        }
+
+        [HttpPost]
         public IActionResult AddNews(AddNewsVM newNews)
         {
-            repository.AddNews(newNews);
+            newsRepository.AddNews(newNews);
             return RedirectToAction(nameof(AdminController.Index));
         }
 
         [HttpPost]
         public IActionResult DeleteNewsPost(int id)
         {
-            repository.DeleteNewsPost(id);
+            newsRepository.DeleteNewsPost(id);
             return RedirectToAction(nameof(AdminController.Index));
         }
 

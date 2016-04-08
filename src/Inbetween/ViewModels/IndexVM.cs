@@ -11,5 +11,7 @@ namespace Inbetween.ViewModels
 
         public ListNewsVM[] ListNews { set; get; }
 
+        public ListAlbumsVM[] ListAlbums { set; get; }
+
     }
 }

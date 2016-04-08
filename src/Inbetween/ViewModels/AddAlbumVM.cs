@@ -12,7 +12,7 @@ namespace Inbetween.ViewModels
     {
         [Display(Name = "Album Name")]
         [Required(ErrorMessage = "The album must have a title")]
-        public string AlbumName { get; set; }
+        public string Albumname { get; set; }
 
         [Display(Name = "Date")]
         [Required(ErrorMessage = "Enter the release date of the album in the following format: yyyy-mm-dd")]
